@@ -1,0 +1,117 @@
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Paquetes
+\input{formatoUOC}
+
+\usepackage{lipsum} % borrar este paquete
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Información
+\asignatura{Fundamentos de la ciencia de datos}
+\titulo{PEC1: ¿Ciencia en los datos?}
+\subtitulo{La Ciencia de Datos en Entornos Deportivos}
+\autor{Andrés Esteban Merino Toapanta}
+\fecha{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliografía
+\addbibresource{00ejemplo.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Nuevos comandos
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+\portada
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lipsum[1-5]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Imágenes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Un tamaño recomendado es un ancho del 75\% de la línea de texto con una altura proporcional a la primera. Todas las imágenes deben incluir una leyenda.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.60\textwidth]{Figuras/encabezado.png}
+    \caption{Leyenda de la figura.}
+    \label{fig:etiqueta de la figura}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tablas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Para la composición de tablas, la letra siempre debe ser de tamaño menor a la del resto del texto y se recomienda optar por el siguiente formato:
+
+\begin{table}[H]
+    \centering\small
+    \begin{tabular}{ccc}
+    \toprule
+        \textbf{Fórmula} & \textbf{Prueba 1} & \textbf{Prueba 2} \\ 
+    \midrule
+        Compuesto 1 & $38.4$  &  $6.32$\\ 
+        Compuesto 2 & $16.6$ & $12.5$ \\ 
+    \bottomrule
+    \end{tabular}
+    \label{tab:01}
+    \caption{Resultados de la experimentación de distintas substancias.}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Código}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ejemplo de código.
+
+\begin{lstlisting}[language=Python,caption={Ejemplo de código.},captionpos=b]
+def OrdenBurbuja(a):
+    for i in range(len(a)-2):
+        for j in range(len(a)-i-1):
+            if a[j] > a[j+1]:
+                a[j],a[j+1] = a[j+1],a[j]
+    return a
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bibliografía y citas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+La bibliografía debe incluirse mediante un archivo \texttt{.bib} con el mismo nombre que el archivo principal. El estilo bibliográfico a usar es APA séptima edición. Para las citas puede utilizar los siguientes comandos según sea adecuado:
+\begin{itemize}
+\item 
+    Cita completa entre paréntesis \verb"\parencite{ }": \parencite{Bib06}
+\item
+    Cita completa sin paréntesis \verb"\textcite{ }": \textcite{Bib06}
+\item 
+    Cita completa entre paréntesis \verb"\cite{ }": \cite{Bib06}
+\item
+    Cita de autor \verb"\citeauthor{ }": \citeauthor{Bib06}
+\item
+    Cita de año \verb"\citeyear{ }": \citeyear{Bib06}
+\item 
+    Cita con opciones extras \verb"\parencite[ ][ ]{ }": \parencite[ver][pág. 66]{Bib06}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Referencias
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\nocite{*}
+\printbibliography
+
+
+
+\end{document}
